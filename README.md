@@ -116,6 +116,28 @@ meta = {
 */
 ```
 
+## Module Formats
+
+SuperJSON supports both ESM (ECMAScript Modules) and CJS (CommonJS) formats, built using [tsup](https://github.com/egoist/tsup). This means you can use it in any JavaScript environment:
+
+### ESM (import/export)
+
+```js
+import { serialize, deserialize } from 'superjson';
+
+// Or import the default export
+import SuperJSON from 'superjson';
+```
+
+### CommonJS (require/module.exports)
+
+```js
+const { serialize, deserialize } = require('superjson');
+
+// Or require the default export
+const SuperJSON = require('superjson');
+```
+
 ## Using with Next.js
 
 The `getServerSideProps`, `getInitialProps`, and `getStaticProps` data hooks provided by Next.js do not allow you to transmit Javascript objects like Dates. It will error unless you convert Dates to strings, etc.

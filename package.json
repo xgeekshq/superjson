@@ -2,10 +2,15 @@
   "version": "2.2.2",
   "license": "MIT",
   "type": "module",
-  "typings": "dist/index.d.ts",
-  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
   "files": [
     "dist"
@@ -14,7 +19,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup",
     "test": "vitest run",
     "lint": "tsdx lint",
     "prepack": "yarn build",
@@ -66,6 +71,7 @@
     "mongodb": "^3.6.6",
     "publish-please": "^5.5.2",
     "tsdx": "^0.14.1",
+    "tsup": "^8.4.0",
     "typescript": "^4.2.4",
     "vitest": "^0.34.6"
   },
@@ -75,5 +81,6 @@
   "resolutions": {
     "**/@typescript-eslint/eslint-plugin": "^4.11.1",
     "**/@typescript-eslint/parser": "^4.11.1"
-  }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }

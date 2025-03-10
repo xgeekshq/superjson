@@ -28,6 +28,26 @@
   </a>
 </p>
 
+## Fork Information
+
+This is a fork of [SuperJSON](https://github.com/blitz-js/superjson) that adds proper CommonJS support.
+
+### Why this fork?
+
+The original SuperJSON package is ESM-only, which creates compatibility issues for projects using CommonJS modules. This fork provides dual module support to ensure the library works seamlessly in both module systems, making it more accessible for projects that haven't migrated to ESM yet or need to support both formats.
+
+### What's changed?
+
+- Added proper CommonJS exports configuration
+- Updated the build system to generate both ESM and CJS outputs
+- Used tsup for efficient dual-format bundling
+- Maintained all the original functionality and type definitions
+- No changes to the core functionality - just improved compatibility
+
+All credit for the original work goes to the SuperJSON team and contributors listed below.
+
+---
+
 ## Key features
 
 - 🍱 Reliable serialization and deserialization
